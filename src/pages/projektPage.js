@@ -100,11 +100,6 @@ export default function ProjektPage() {
                 </span>
 
                 <span className="p-float-label customTextBox">
-                    <InputText id="deadline" value={newProjektDeadline} onChange={(e) => setNewProjektDealine(e.target.value)} />
-                    <label htmlFor="deadline">Projektdealine</label>
-                </span>
-
-                <span className="p-float-label customTextBox">
                     <InputTextarea id="description" value={newProjektBeschreibung} onChange={(e) => setNewProjektbeschreibung(e.target.value)} rows={5} cols={30} />
                     <label htmlFor="description">Beschreibung</label>
                 </span>
