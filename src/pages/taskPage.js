@@ -10,6 +10,7 @@ import { Toast } from 'primereact/toast';
 import { InputText } from 'primereact/inputtext';
 import { InputTextarea } from 'primereact/inputtextarea';
 import { Dropdown } from 'primereact/dropdown';
+import { Calendar } from 'primereact/calendar';
 
 export default function TaskPage() {
     const location = useLocation();
@@ -43,21 +44,35 @@ export default function TaskPage() {
     }
 
     async function submitTask() {
-        var result = await createNewTask()
+        if(newTaskName.length == 0) {
+            showError("Ein Projektname muss eingegeben werden!");
+            return;
+        }
+        if(newTaskDeadline.length == 0) {
+            showError("Es muss eine Deadline festgelegt werden!");
+            return;
+        }
+        if(newTaskWorker.length == 0) {
+            showError("Diese Aufgabe muss einem Mitarbeiter zugewiesen werden!");
+            return;
+        }
+
+        var result = await createNewTask(newTaskName, newTaskWorker, newTaskDeadline, newTaskDescription)
+
         if (result) {
-            showSuccess()
+            showSuccess("Das Projekt wurde erfolgreich erstellt!")
         }
         else {
-            showError()
+            showError("Es ist ein Fehler aufgetreten. Bitte versuchen Sie es zu einem späteren Zeitpunkt erneut")
         }
     }
 
-    const showError = () => {
-        toast.current.show({ severity: 'error', summary: 'Error!', detail: 'Beim erstellen des Projektes ist ein Fehler aufgetreten!', life: 3000 });
+    const showError = (text) => {
+        toast.current.show({ severity: 'error', summary: 'Error!', detail: text, life: 3000 });
     }
 
-    const showSuccess = () => {
-        toast.current.show({ severity: 'success', summary: 'Erfolgreich!', detail: 'Das Projekt wurde erfolgreich ertsellt!', life: 3000 });
+    const showSuccess = (text) => {
+        toast.current.show({ severity: 'success', summary: 'Erfolgreich!', detail: text, life: 3000 });
     }
 
     async function handleWorkers() {
@@ -105,7 +120,7 @@ export default function TaskPage() {
                 </span>
 
                 <span className="p-float-label customTextBox">
-                    <InputText id="taskDeadline" value={newTaskDeadline} onChange={(e) => setNewDeadline(e.target.value)} />
+                    <Calendar id="taskDeadline" value={newTaskDeadline} onChange={(e) => setNewDeadline(e.target.value)} />
                     <label htmlFor="taskDeadline">Deadline</label>
                 </span>
                
