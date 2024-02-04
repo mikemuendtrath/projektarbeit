@@ -69,6 +69,24 @@ export function createNewProject(projektName,projektleiter, projektdeadline, pro
 
 }
 
+export function createNewTask(taskName, taskWorker, taskDeadline, taskDescription){
+    //fetch
+    var reuslt = true
+    if (reuslt) {
+        return true
+    }
+    else{
+        return false
+    }
+
+}
+
+
 export function getPossibleProjektleiter(){
     return [{name:"Name1"},{name:"Name2"},{name:"Name3"}]
 }
+
+export function getPossibleEmployee(){
+    return [{name:"Employee1"},{name:"Employee2"},{name:"Employee3"}]
+}
+

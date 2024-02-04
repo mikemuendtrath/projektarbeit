@@ -11,6 +11,7 @@ import { InputText } from 'primereact/inputtext';
 import { InputTextarea } from 'primereact/inputtextarea';
 import { Toast } from 'primereact/toast';
 import { Dropdown } from 'primereact/dropdown';
+import { Calendar } from 'primereact/calendar';
 
 export default function ProjektPage() {
     const location = useLocation();
@@ -95,12 +96,7 @@ export default function ProjektPage() {
                 </span>
 
                 <span className="p-float-label customTextBox">
-                    <InputText id="deadline" value={newProjektDeadline} onChange={(e) => setNewProjektDealine(e.target.value)} />
-                    <label htmlFor="deadline">Projektdealine</label>
-                </span>
-
-                <span className="p-float-label customTextBox">
-                    <InputText id="deadline" value={newProjektDeadline} onChange={(e) => setNewProjektDealine(e.target.value)} />
+                    <Calendar id="deadline" value={newProjektDeadline} onChange={(e) => setNewProjektDealine(e.target.value)} />
                     <label htmlFor="deadline">Projektdealine</label>
                 </span>
 
