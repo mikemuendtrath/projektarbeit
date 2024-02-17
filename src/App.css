@@ -9,6 +9,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0px 0px 12px -4px rgba(0,0,0,0.75);
 }
 
 .innerTextInputWrapper{
@@ -37,16 +38,35 @@ body{
 .projectOverviewHeader{
   height: 10%;
   width: 100%;
-  background-color: lightblue;
+  background-color: white;
   display: flex;
   align-items: center;
-  padding: 10px;
+  justify-content: center;
+
 }
 
 .projectOverviewMain{
   height: 90%;
   width: 100%;
+  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.projectOverviewInnerWrapper{
+  height: 80%;
+  width: 90%;
   background-color: white;
+  box-shadow: 0px 0px 12px -4px rgba(0,0,0,0.75);
+}
+
+.projectOverviewHeaderInnerWrapper{
+  height: 100%;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .taskWrapper{
@@ -57,14 +77,32 @@ body{
 .taskOverviewHeader{
   height: 10%;
   width: 100%;
-  background-color: lightblue;
+  background-color: white;
   display: flex;
   align-items: center;
-  padding: 10px;
+  justify-content: center;
 }
 
 .taskOverviewMain{
   height: 90%;
   width: 100%;
+  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.taskOverviewInnerWrapper{
+  height: 80%;
+  width: 90%;
   background-color: white;
+  box-shadow: 0px 0px 12px -4px rgba(0,0,0,0.75);
+}
+
+.taskOverviewHeaderInnerWrapper{
+  height: 100%;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

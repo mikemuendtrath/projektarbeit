@@ -67,19 +67,24 @@ export default function ProjektPage() {
     return (
         <div className="projektWrapper">
             <div className='projectOverviewHeader'>
+                <div className='projectOverviewHeaderInnerWrapper'>
+                    <h2>Verfügbare Projekte</h2>
                 <Button label="Neues Projekt erstellen" icon="pi pi-plus" onClick={() => { setOpenDialog(true) }} />
+                </div>
             </div>
             <div className='projectOverviewMain'>
-                <DataTable value={userProjects} stripedRows paginator rows={5} rowsPerPageOptions={[5, 10, 25, 50]} tableStyle={{ minWidth: '50rem' }}
-                    selectionMode="single"
-                    selection={selectedProduct}
-                    onSelectionChange={(e) => handleProductClick(e)}
-                >
-                    <Column sortable field="id" header="ProjektID"></Column>
-                    <Column sortable field="name" header="Projektname"></Column>
-                    <Column sortable field="deadline" header="Deadline"></Column>
-                    <Column sortable field="description" header="Beschreibung"></Column>
-                </DataTable>
+                <div className='projectOverviewInnerWrapper'>
+                    <DataTable value={userProjects} stripedRows paginator rows={5} rowsPerPageOptions={[5, 10, 25, 50]} tableStyle={{ minWidth: '50rem' }}
+                        selectionMode="single"
+                        selection={selectedProduct}
+                        onSelectionChange={(e) => handleProductClick(e)}
+                    >
+                        <Column sortable field="id" header="ProjektID"></Column>
+                        <Column sortable field="name" header="Projektname"></Column>
+                        <Column sortable field="deadline" header="Deadline"></Column>
+                        <Column sortable field="description" header="Beschreibung"></Column>
+                    </DataTable>
+                </div>
             </div>
 
 
